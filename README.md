@@ -5,20 +5,24 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+### System dependencies
+bundler 2.4.22 
+npm 10.2.4
+ruby 3.2.2 
+rails 7.1.2
+postgresql 12.16
+node 21.2.0
 
-* System dependencies
+### Once dependencies are installed, to run the project  
+`bundle install` to install ruby dependencies  
+`npm install --prefix client` to install client node packages  
+`rails db:create` to create rails postgres db  
+`rails db:migrate` to run db migrations (dev)  
+`rails s` to run the rails server  
+`npm start --prefix client` to run the client server  
+This will start a server at https://localhost:4000
 
-* Configuration
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
+# hi shayne
 
 * ...
