@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   # error messsages as json
   rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity_response
 
+  # create a new user 
   def create
-    byebug
     user = User.create!(user_params)
     session[:user_id] = user.id
     render json: user, status: :created
@@ -24,11 +24,26 @@ class UsersController < ApplicationController
     end 
   end 
 
+  # update user account, currently only username
+  def update
+    user = User.find_by(id: session[:user_id])
+    user.update!(user_params)
+    render json: user
+  end 
+
+  # add additional credits to user profile 
+  def add_credits
+    user = User.find_by(id: session[:user_id])
+    credits = user.credits + user_params[:credits].to_i
+    user.update!(credits: credits)
+    render json: user
+  end 
+
   private
 
   # permitted user params for login and account creation
   def user_params
-    params.require(:user).permit(:username, :password, :password_confirmation, :image_url)
+    params.require(:user).permit(:username, :password, :password_confirmation, :image_url, :credits)
   end 
 
   # deliver invalid error message attribute as json in response body 

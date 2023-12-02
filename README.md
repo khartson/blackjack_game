@@ -6,12 +6,12 @@ application up and running.
 Things you may want to cover:
 
 ### System dependencies
-bundler 2.4.22 
-npm 10.2.4
-ruby 3.2.2 
-rails 7.1.2
-postgresql 12.16
-node 21.2.0
+bundler 2.4.22   
+npm 10.2.4  
+ruby 3.2.2  
+rails 7.1.2  
+postgresql 12.16  
+node 21.2.0  
 
 ### Once dependencies are installed, to run the project  
 `bundle install` to install ruby dependencies  

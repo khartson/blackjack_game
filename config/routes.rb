@@ -1,11 +1,12 @@
 Rails.application.routes.draw do
 
-  get '/hello', to: 'application#hello_world'
+  resources :users, only: [:update]
 
-  # sign in routes
+  # manual auth/sign in routes
   post '/signup', to: 'users#create'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
   get '/me', to: 'users#show'
+  post '/addcredits', to: 'users#add_credits'
 
 end

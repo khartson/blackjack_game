@@ -25,7 +25,7 @@ function NavBar({ setUser, user }) {
       </Nav>
     </Container>
     <Container>
-        <Navbar.Text>Signed in as: {user.username}</Navbar.Text>
+        <Navbar.Text>Signed in as: {user.username} | Credits: <b>{user.credits}</b> </Navbar.Text>
         <Button onClick={logout}>Log out</Button>
     </Container>
   </Navbar>

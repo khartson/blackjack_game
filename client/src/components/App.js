@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import { Container, Nav } from 'react-bootstrap';
 import Login from '../pages/Login';
 import NavBar from './NavBar';
+import Profile from '../pages/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function App() {
@@ -27,7 +28,7 @@ function App() {
       <NavBar setUser={setUser} user={user}/>
       <hr/>
       <Routes>
-        <Route path='/profile' element={<h1>profile</h1>}/>
+        <Route path='/profile' element={<Profile id={user.id} setUser={setUser}/>}/>
         <Route path='/game' element={<h1>Game</h1>}/>
       </Routes>
     </Container>
