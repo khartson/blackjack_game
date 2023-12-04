@@ -5,6 +5,7 @@ import { Container, Nav } from 'react-bootstrap';
 import Login from '../pages/Login';
 import NavBar from './NavBar';
 import Profile from '../pages/Profile';
+import Game from '../pages/Game'; 
 import 'bootstrap/dist/css/bootstrap.min.css'; 
 
 function App() {
@@ -29,7 +30,7 @@ function App() {
       <hr/>
       <Routes>
         <Route path='/profile' element={<Profile id={user.id} setUser={setUser}/>}/>
-        <Route path='/game' element={<h1>Game</h1>}/>
+        <Route path='/game' element={<Game/>}/>
       </Routes>
     </Container>
   )
