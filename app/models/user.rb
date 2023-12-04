@@ -1,5 +1,10 @@
 class User < ApplicationRecord
   has_secure_password
+  
+  # user will have many games through fk on 
+  # games table and indexed on user id
+  # for faster lookup. 
+  has_many :games
 
   validates :username, presence: true
 

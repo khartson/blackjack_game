@@ -13,6 +13,7 @@ function LoginForm({ onLogin }) {
   function handleFormChange(e) {
     const field = e.target.id;
     const input = e.target.value; 
+    console.log(input)
     
     setFormData({
       ...formData,
